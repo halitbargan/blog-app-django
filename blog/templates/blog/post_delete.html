@@ -1,17 +1,15 @@
 {% extends 'blog/base.html' %}
 
 {% block container %}
-<h2>DELETE PAGE</h2>
-
+<h2> DELETE PAGE </h2>
 
 <form action='' method="POST">
-    <h4>Do you want to really delete {{ post }}?</h4>
+    <h4> Do you want to really delete {{ post }} </h4>
     {% csrf_token %}
     {{ form }}
-    <input type="submit" value="Yes"/>
+    <input type="submit" value="Yes" />
 
 </form>
-<a href="{% url 'home' post.id %}"><button>No</button></a>
-
+<a href="{% url 'details' post.id %}" ><button>No</button></a>
 
 {% endblock container %}
